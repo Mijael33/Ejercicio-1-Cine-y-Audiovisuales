@@ -1,0 +1,7 @@
+{
+  "name": "cine-y-audiovisuales",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
