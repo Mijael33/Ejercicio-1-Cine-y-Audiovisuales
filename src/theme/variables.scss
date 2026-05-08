@@ -1,2 +1,48 @@
-// For information on how to create your own theme, please refer to:
-// https://ionicframework.com/docs/theming/
+// src/theme/variables.scss
+// ==============================================================
+// PALETA DE COLORES "ORO LÍQUIDO" - JOYERÍA PREMIUM
+// ==============================================================
+
+:root {
+  --ion-background-color: #080808;
+  --ion-background-color-rgb: 8, 8, 8;
+  --ion-card-background: #111111;
+
+  --ion-text-color: #f5f0eb;
+  --ion-text-color-rgb: 245, 240, 235;
+
+  --ion-color-step-50: #1a1a1a;
+  --ion-color-step-100: #262626;
+  --ion-color-step-150: #333333;
+  --ion-color-step-200: #404040;
+  --ion-color-step-300: #595959;
+  --ion-color-step-400: #8c8c8c;
+  --ion-color-step-500: #a6a6a6;
+  --ion-color-step-600: #bfbfbf;
+  --ion-color-step-700: #d9d9d9;
+  --ion-color-step-800: #ececec;
+  --ion-color-step-900: #fafafa;
+
+  --ion-color-primary: #c9a84c;
+  --ion-color-primary-rgb: 201, 168, 76;
+  --ion-color-primary-contrast: #080808;
+  --ion-color-primary-contrast-rgb: 8, 8, 8;
+  --ion-color-primary-shade: #b0903e;
+  --ion-color-primary-tint: #d4b960;
+
+  --ion-color-secondary: #e6d5a8;
+  --ion-color-secondary-rgb: 230, 213, 168;
+  --ion-color-secondary-contrast: #080808;
+
+  --ion-color-tertiary: #c49a6c;
+
+  --app-shadow-premium: 0 20px 50px rgba(0, 0, 0, 0.6);
+  --app-shadow-gold: 0 10px 30px rgba(201, 168, 76, 0.2);
+  --app-shadow-card: 0 8px 24px rgba(0, 0, 0, 0.5);
+
+  --app-border-color: rgba(201, 168, 76, 0.15);
+  --app-border-gold: rgba(201, 168, 76, 0.4);
+
+  --app-gradient-gold: linear-gradient(135deg, #c9a84c 0%, #e6d5a8 50%, #c9a84c 100%);
+  --app-gradient-dark: linear-gradient(180deg, rgba(8, 8, 8, 0) 0%, rgba(8, 8, 8, 0.95) 100%);
+}

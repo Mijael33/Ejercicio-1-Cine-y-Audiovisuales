@@ -1,0 +1,82 @@
+<!-- src/app/home/home.page.html -->
+
+<!-- HEADER HTML NATIVO (FUNCIONA EN EL TELÉFONO) -->
+<div style="display:flex;justify-content:space-between;align-items:center;padding:10px 16px;background:#080808;position:sticky;top:35px;z-index:999;">
+  <div>
+    <div style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.2rem;color:#f5f0eb;text-transform:uppercase;letter-spacing:2px;">Obras Audiovisuales</div>
+    <div style="font-family:'Montserrat',sans-serif;font-weight:300;font-size:0.6rem;color:#c9a84c;text-transform:uppercase;letter-spacing:3px;">Mijael Engelmann</div>
+  </div>
+  <div style="display:flex;gap:8px;">
+    <ion-icon name="search-outline" style="font-size:1.5rem;color:#ffffff;cursor:pointer;" (click)="onSearchClick()"></ion-icon>
+    <ion-icon name="notifications-outline" style="font-size:1.5rem;color:#ffffff;cursor:pointer;" (click)="onNotificationsClick()"></ion-icon>
+  </div>
+</div>
+
+<ion-content class="premium-content" scroll-y="true">
+  <section *ngIf="featuredMovie" class="banner-section">
+    <div class="banner-card">
+      <img [src]="featuredMovie.bannerUrl" [alt]="featuredMovie.title" class="banner-image" />
+      <div class="banner-overlay"></div>
+      <div class="banner-info">
+        <span class="banner-category text-gold">{{ featuredMovie.genre }}</span>
+        <h1 class="banner-title">{{ featuredMovie.title }}</h1>
+        <p class="banner-description">{{ featuredMovie.description }}</p>
+        <ion-button class="banner-btn" shape="round" (click)="exploreFeaturedMovie()">
+          Explorar obra
+          <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>
+        </ion-button>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="section-header">
+      <h2 class="section-title">Colección Destacada</h2>
+      <a class="section-link text-gold" (click)="viewAllMovies()">Ver colección</a>
+    </div>
+    <div class="movies-row">
+      <div *ngFor="let movie of featuredMovies" class="movie-card" (click)="openMovieDetail(movie)">
+        <img [src]="movie.posterUrl" [alt]="movie.title" class="movie-poster" />
+        <div class="movie-info">
+          <h3 class="movie-title">{{ movie.title }}</h3>
+          <div class="movie-meta">
+            <span class="movie-genre">{{ movie.genre }}</span>
+            <span class="movie-divider">•</span>
+            <span class="movie-duration">{{ movie.duration }}</span>
+          </div>
+          <div class="movie-rating">
+            <ion-icon name="star"></ion-icon>
+            <span>{{ movie.rating }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="section-header">
+      <h2 class="section-title">Noticias & Prensa</h2>
+      <a class="section-link text-gold" (click)="viewAllNews()">Más noticias</a>
+    </div>
+    <div class="news-list">
+      <div *ngFor="let news of cinemaNews" class="news-card" (click)="openNewsDetail(news)">
+        <img [src]="news.thumbnailUrl" [alt]="news.title" class="news-thumbnail" />
+        <div class="news-info">
+          <span class="news-category tag">{{ news.category }}</span>
+          <h3 class="news-title">{{ news.title }}</h3>
+          <p class="news-summary">{{ news.summary }}</p>
+          <span class="news-date text-secondary">{{ news.date }}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="academic-footer">
+    <div class="footer-divider"></div>
+    <p class="footer-title">Ejercicio 1 Desarrollado por:</p>
+    <p class="footer-name">Mijael Engelmann</p>
+    <p class="footer-id">C.I.: V-31.222.463</p>
+    <p class="footer-institution">UNETI - PROGRAMACIÓN III MÓDULO II</p>
+    <p class="footer-professor">Profesor: Msc. Carlos Márquez</p>
+  </section>
+</ion-content>

@@ -1,0 +1,80 @@
+<!-- src/app/profile/profile.page.html -->
+<!-- ==============================================================
+     PLANTILLA DE LA PÁGINA DE PERFIL PROFESIONAL (PREMIUM)
+     Muestra la identidad, biografía, habilidades y portafolio.
+============================================================= -->
+<ion-header class="premium-header">
+  <ion-toolbar>
+    <ion-title class="header-title">Perfil Profesional</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="premium-content" *ngIf="profile">
+  <!-- =========================================
+       CABECERA DEL PERFIL
+  ========================================= -->
+  <section class="profile-header">
+    <div class="avatar-container">
+      <img
+        [src]="profile.avatarUrl"
+        [alt]="profile.name"
+        class="profile-avatar"
+      />
+    </div>
+    <h1 class="profile-name">{{ profile.name }}</h1>
+    <span class="profile-specialty text-gold">{{ profile.specialty }}</span>
+    <!-- Cita inspiradora -->
+    <blockquote class="profile-quote">
+      <ion-icon name="quote-outline"></ion-icon>
+      <p>{{ profile.quote }}</p>
+    </blockquote>
+  </section>
+
+  <!-- =========================================
+       BIOGRAFÍA
+  ========================================= -->
+  <section class="content-section">
+    <div class="section-header">
+      <h2 class="section-title">Biografía</h2>
+      <div class="title-underline"></div>
+    </div>
+    <p class="bio-text">{{ profile.bio }}</p>
+  </section>
+
+  <!-- =========================================
+       HABILIDADES
+  ========================================= -->
+  <section class="content-section">
+    <div class="section-header">
+      <h2 class="section-title">Habilidades</h2>
+      <div class="title-underline"></div>
+    </div>
+    <div class="skills-grid">
+      <span *ngFor="let skill of profile.skills" class="skill-chip">
+        {{ skill }}
+      </span>
+    </div>
+  </section>
+
+  <!-- =========================================
+       GALERÍA VISUAL
+  ========================================= -->
+  <section class="content-section last-section">
+    <div class="section-header">
+      <h2 class="section-title">Galería Visual</h2>
+      <div class="title-underline"></div>
+    </div>
+    <div class="gallery-grid">
+      <div
+        *ngFor="let image of profile.galleryImages"
+        class="gallery-item"
+      >
+        <img [src]="image" alt="Portfolio" class="gallery-image" />
+        <!-- Overlay sutil al hacer hover (efecto CSS) -->
+        <div class="gallery-overlay">
+          <ion-icon name="expand-outline"></ion-icon>
+        </div>
+      </div>
+    </div>
+  </section>
+</ion-content>

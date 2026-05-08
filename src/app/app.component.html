@@ -1,3 +1,22 @@
+<!-- src/app/app.component.html -->
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <!-- Barra negra fija para separar de la barra de estado -->
+  <div style="position:fixed;top:0;left:0;right:0;height:35px;background:#080808;z-index:99999;"></div>
+  
+  <ion-router-outlet id="main" style="margin-top:35px;"></ion-router-outlet>
+
+  <div class="custom-tab-bar">
+    <div class="tab-button" [class.active]="activeTab === 'home'" (click)="navigateTo('home')">
+      <ion-icon name="home-outline"></ion-icon>
+      <span>Inicio</span>
+    </div>
+    <div class="tab-button" [class.active]="activeTab === 'profile'" (click)="navigateTo('profile')">
+      <ion-icon name="person-outline"></ion-icon>
+      <span>Perfil</span>
+    </div>
+    <div class="tab-button" [class.active]="activeTab === 'contact'" (click)="navigateTo('contact')">
+      <ion-icon name="mail-outline"></ion-icon>
+      <span>Contacto</span>
+    </div>
+  </div>
 </ion-app>

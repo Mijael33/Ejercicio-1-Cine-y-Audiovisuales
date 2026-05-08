@@ -1,0 +1,45 @@
+<!-- src/app/contact/contact.page.html -->
+<ion-header class="premium-header">
+  <ion-toolbar>
+    <ion-title class="header-title">Contacto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="premium-content">
+  <section class="contact-intro">
+    <ion-icon name="paper-plane-outline" class="intro-icon"></ion-icon>
+    <h1 class="intro-title">Hablemos de Cine</h1>
+    <p class="intro-text">¿Tienes un proyecto en mente? Estaré encantado de escuchar tus ideas.</p>
+  </section>
+
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+    <div class="input-group">
+      <label class="input-label">Nombre</label>
+      <input formControlName="name" type="text" placeholder="Tu nombre completo" class="premium-input" />
+      <span *ngIf="nameControl?.invalid && nameControl?.touched" class="error-message">El nombre es obligatorio (mín. 2 caracteres).</span>
+    </div>
+
+    <div class="input-group">
+      <label class="input-label">Correo Electrónico</label>
+      <input formControlName="email" type="email" placeholder="tu@email.com" class="premium-input" />
+      <span *ngIf="emailControl?.invalid && emailControl?.touched" class="error-message">Ingresa un correo válido.</span>
+    </div>
+
+    <div class="input-group">
+      <label class="input-label">Asunto</label>
+      <input formControlName="subject" type="text" placeholder="Motivo de tu mensaje" class="premium-input" />
+      <span *ngIf="subjectControl?.invalid && subjectControl?.touched" class="error-message">El asunto es obligatorio (mín. 5 caracteres).</span>
+    </div>
+
+    <div class="input-group">
+      <label class="input-label">Mensaje</label>
+      <textarea formControlName="message" placeholder="Cuéntame tu proyecto..." rows="5" class="premium-textarea"></textarea>
+      <span *ngIf="messageControl?.invalid && messageControl?.touched" class="error-message">El mensaje es obligatorio (mín. 10 caracteres).</span>
+    </div>
+
+    <button type="submit" class="submit-btn">
+      ENVIAR MENSAJE
+      <ion-icon name="send-outline"></ion-icon>
+    </button>
+  </form>
+</ion-content>

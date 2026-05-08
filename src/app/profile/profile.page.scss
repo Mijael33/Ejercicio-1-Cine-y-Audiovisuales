@@ -1,0 +1,240 @@
+/* src/app/profile/profile.page.scss */
+/* ==============================================================
+   ESTILOS DE PERFIL
+   Acabados dorados, elegancia minimalista.
+============================================================= */
+
+.premium-header {
+  margin-top: 30px;
+}
+
+.premium-header ion-toolbar {
+  --background: transparent;
+  --border-color: transparent;
+  --min-height: 50px;
+}
+
+.header-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: var(--ion-text-color);
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+.premium-content {
+  --background: var(--ion-background-color);
+}
+
+/* =========================================
+   CABECERA DEL PERFIL
+========================================= */
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 24px 32px;
+  text-align: center;
+  position: relative;
+}
+
+/* Línea decorativa superior */
+.profile-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 2px;
+  background: var(--app-gradient-gold);
+}
+
+.avatar-container {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  padding: 3px;
+  background: var(--app-gradient-gold);
+  margin-bottom: 24px;
+  box-shadow: 0 0 40px rgba(201, 168, 76, 0.25);
+}
+
+.profile-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  border: 3px solid #080808;
+}
+
+.profile-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0 0 6px;
+  color: #f5f0eb;
+  letter-spacing: 2px;
+}
+
+.profile-specialty {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--ion-color-primary);
+  margin-bottom: 24px;
+}
+
+.profile-quote {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0;
+  padding: 20px 0;
+  border-top: 1px solid var(--app-border-color);
+  border-bottom: 1px solid var(--app-border-color);
+  color: var(--ion-color-step-500);
+  font-style: italic;
+  font-weight: 300;
+  text-align: left;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.profile-quote ion-icon {
+  font-size: 1.2rem;
+  color: var(--ion-color-primary);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+/* =========================================
+   CONTENIDO
+========================================= */
+.content-section {
+  padding: 0 24px 32px;
+}
+
+.last-section {
+  margin-bottom: 80px;
+}
+
+.section-header {
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 0 10px;
+  color: #f5f0eb;
+  letter-spacing: 2px;
+}
+
+.title-underline {
+  width: 50px;
+  height: 2px;
+  background: var(--app-gradient-gold);
+  border-radius: 1px;
+}
+
+.bio-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--ion-color-step-500);
+  margin: 0;
+}
+
+/* =========================================
+   HABILIDADES
+========================================= */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-chip {
+  background: var(--ion-card-background);
+  color: var(--ion-color-step-500);
+  padding: 10px 18px;
+  border-radius: 2px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border: 1px solid var(--app-border-color);
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.skill-chip:hover {
+  background: #1a1a1a;
+  border-color: var(--ion-color-primary);
+  color: var(--ion-color-primary);
+  box-shadow: var(--app-shadow-gold);
+}
+
+/* =========================================
+   GALERÍA VISUAL
+========================================= */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  background: var(--ion-color-step-100);
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.gallery-item:hover {
+  border-color: var(--app-border-gold);
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease, filter 0.5s ease;
+  filter: brightness(0.8);
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 8, 8, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: var(--ion-color-primary);
+  font-size: 1.3rem;
+}
+
+.gallery-item:hover .gallery-image {
+  transform: scale(1.06);
+  filter: brightness(1);
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
