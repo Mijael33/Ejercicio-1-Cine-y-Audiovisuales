@@ -1,0 +1,171 @@
+/* src/app/contact/contact.page.scss */
+/* ==============================================================
+   ESTILOS DE CONTACTO
+   Formulario minimalista de lujo.
+============================================================= */
+
+.premium-header {
+  margin-top: 30px;
+}
+
+.premium-header ion-toolbar {
+  --background: transparent;
+  --border-color: transparent;
+  --min-height: 50px;
+}
+
+.header-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: var(--ion-text-color);
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+.premium-content {
+  --background: var(--ion-background-color);
+}
+
+/* =========================================
+   INTRODUCCIÓN
+========================================= */
+.contact-intro {
+  text-align: center;
+  padding: 48px 24px 28px;
+  position: relative;
+}
+
+.contact-intro::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: var(--app-gradient-gold);
+  margin: 24px auto 0;
+}
+
+.intro-icon {
+  font-size: 2.5rem;
+  color: var(--ion-color-primary);
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 15px rgba(201, 168, 76, 0.3));
+}
+
+.intro-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0 0 10px;
+  color: #f5f0eb;
+  letter-spacing: 2px;
+}
+
+.intro-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  color: var(--ion-color-step-400);
+  font-weight: 300;
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* =========================================
+   FORMULARIO
+========================================= */
+.contact-form {
+  padding: 0 24px 80px;
+}
+
+.input-group {
+  margin-bottom: 24px;
+}
+
+.input-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--ion-color-step-400);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Inputs y textarea nativos con estilo premium */
+.premium-input,
+.premium-textarea {
+  width: 100%;
+  background: #0d0d0d;
+  color: #f5f0eb;
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  border-radius: 6px;
+  padding: 14px 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.premium-input::placeholder,
+.premium-textarea::placeholder {
+  color: #595959;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+}
+
+.premium-input:focus,
+.premium-textarea:focus {
+  border-color: #c9a84c;
+  box-shadow: 0 0 15px rgba(201, 168, 76, 0.1);
+}
+
+.premium-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Mensajes de error */
+.error-message {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  color: #c49a6c;
+  margin-top: 6px;
+  display: block;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Botón de envío premium */
+.submit-btn {
+  width: 100%;
+  background: transparent;
+  color: #c9a84c;
+  border: 1px solid #c9a84c;
+  border-radius: 4px;
+  padding: 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  margin-top: 16px;
+}
+
+.submit-btn:hover,
+.submit-btn:active {
+  background: #c9a84c;
+  color: #080808;
+}
+
+.submit-btn ion-icon {
+  font-size: 1.1rem;
+}

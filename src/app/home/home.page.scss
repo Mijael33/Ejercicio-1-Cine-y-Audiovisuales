@@ -1,0 +1,474 @@
+/* src/app/home/home.page.scss */
+/* ==============================================================
+   ESTILOS DE INICIO - JOYERÍA PREMIUM
+============================================================= */
+
+.premium-header {
+  margin-top: 30px;
+}
+
+.premium-header ion-toolbar {
+  --background: transparent;
+  --border-color: transparent;
+  --min-height: 50px;
+}
+
+.header-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: clamp(0.9rem, 4vw, 1.5rem);
+  letter-spacing: 2px;
+  color: var(--ion-text-color);
+  display: block;
+  text-transform: uppercase;
+  white-space: normal;
+  word-break: break-word;
+  line-height: 1.2;
+}
+
+.header-logo-sub {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: clamp(0.5rem, 2.5vw, 0.7rem);
+  color: var(--ion-color-primary);
+  display: block;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-top: 3px;
+  white-space: normal;
+  word-break: break-word;
+  line-height: 1.3;
+}
+
+.icon-btn {
+  --color: #ffffff;
+  font-size: 1.5rem;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+  margin-right: 4px;
+}
+
+.icon-btn:hover {
+  opacity: 1;
+  --color: var(--ion-color-primary);
+}
+
+.icon-btn ion-icon {
+  font-size: 1.4rem;
+}
+
+.premium-content {
+  --background: var(--ion-background-color);
+  --padding-top: 0px;
+}
+
+// Banner
+.banner-section {
+  padding: 0 16px 28px;
+}
+
+.banner-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--app-shadow-premium);
+  border: 1px solid var(--app-border-color);
+}
+
+.banner-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--app-gradient-gold);
+  z-index: 3;
+  opacity: 0.8;
+}
+
+.banner-image {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.65) contrast(1.1);
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  background: linear-gradient(90deg, var(--ion-color-step-50) 0%, var(--ion-color-step-100) 40%, var(--ion-color-step-50) 80%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.banner-image[src] {
+  animation: none;
+  background: none;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.banner-card:hover .banner-image {
+  transform: scale(1.03);
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(8,8,8,0.1) 0%, rgba(8,8,8,0.3) 30%, rgba(8,8,8,0.85) 70%, rgba(8,8,8,0.95) 100%);
+  z-index: 1;
+}
+
+.banner-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 40px 28px;
+  z-index: 2;
+}
+
+.banner-category {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.banner-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.6rem;
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0 0 12px;
+  color: #f5f0eb;
+  letter-spacing: 1px;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+}
+
+.banner-description {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  color: var(--ion-color-step-500);
+  margin-bottom: 28px;
+  font-weight: 300;
+  line-height: 1.6;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  max-width: 90%;
+}
+
+.banner-btn {
+  --background: transparent;
+  --color: var(--ion-color-primary);
+  --border-radius: 2px;
+  --border-color: var(--ion-color-primary);
+  --border-style: solid;
+  --border-width: 1px;
+  --box-shadow: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  height: 44px;
+  padding: 0 24px;
+  transition: all 0.3s ease;
+}
+
+.banner-btn:hover {
+  --background: var(--ion-color-primary);
+  --color: var(--ion-background-color);
+  --box-shadow: 0 8px 25px rgba(201,168,76,0.3);
+}
+
+// Secciones
+.content-section {
+  padding: 0 16px 36px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--app-border-color);
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  color: #f5f0eb;
+  letter-spacing: 1.5px;
+}
+
+.section-link {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.section-link:hover {
+  letter-spacing: 3px;
+}
+
+// Películas
+.movies-row {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding-bottom: 12px;
+}
+
+.movie-card {
+  min-width: 170px;
+  max-width: 170px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--ion-card-background);
+  box-shadow: var(--app-shadow-card);
+  border: 1px solid var(--app-border-color);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+}
+
+.movie-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.7), var(--app-shadow-gold);
+  border-color: var(--app-border-gold);
+}
+
+.movie-poster {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.9);
+  transition: filter 0.4s ease;
+  background: linear-gradient(90deg, var(--ion-color-step-50) 0%, var(--ion-color-step-100) 40%, var(--ion-color-step-50) 80%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.movie-poster[src] {
+  animation: none;
+  background: none;
+}
+
+.movie-card:hover .movie-poster {
+  filter: brightness(1.05);
+}
+
+.movie-info {
+  padding: 14px;
+}
+
+.movie-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 6px;
+  color: #f5f0eb;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: 0.5px;
+}
+
+.movie-meta, .movie-duration, .movie-genre {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.65rem;
+  color: var(--ion-color-step-400);
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.movie-rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  color: var(--ion-color-primary);
+  font-weight: 500;
+}
+
+.movie-rating ion-icon {
+  font-size: 0.85rem;
+}
+
+// Noticias
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.news-card {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  background: var(--ion-card-background);
+  border-radius: 6px;
+  padding: 16px;
+  box-shadow: var(--app-shadow-card);
+  border: 1px solid var(--app-border-color);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.news-card:hover {
+  border-color: var(--app-border-gold);
+  box-shadow: var(--app-shadow-card), var(--app-shadow-gold);
+}
+
+.news-thumbnail {
+  width: 90px;
+  height: 90px;
+  border-radius: 4px;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: linear-gradient(90deg, var(--ion-color-step-50) 0%, var(--ion-color-step-100) 40%, var(--ion-color-step-50) 80%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.news-thumbnail[src] {
+  animation: none;
+  background: none;
+}
+
+.news-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.news-category.tag {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--ion-color-primary);
+}
+
+.news-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0;
+  color: #f5f0eb;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+}
+
+.news-summary {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  color: var(--ion-color-step-400);
+  margin: 0;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.news-date {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.65rem;
+  color: var(--ion-color-step-400);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+// Footer académico
+.academic-footer {
+  text-align: center;
+  padding: 40px 24px 100px;
+  margin-top: 12px;
+}
+
+.footer-divider {
+  width: 60px;
+  height: 2px;
+  background: var(--app-gradient-gold);
+  margin: 0 auto 24px;
+  border-radius: 1px;
+}
+
+.footer-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--ion-color-primary);
+  margin: 0 0 16px;
+  letter-spacing: 1px;
+}
+
+.footer-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #f5f0eb;
+  margin: 0 0 4px;
+  letter-spacing: 2px;
+}
+
+.footer-id {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  color: var(--ion-color-step-400);
+  margin: 0 0 16px;
+  letter-spacing: 1px;
+}
+
+.footer-institution {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--ion-color-step-400);
+  margin: 0 0 4px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.footer-professor {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.65rem;
+  color: var(--ion-color-step-400);
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+// Responsividad
+@media (max-width: 360px) {
+  .banner-image { height: 380px; }
+  .banner-title { font-size: 1.8rem; }
+  .banner-description { font-size: 0.75rem; }
+  .movie-card { min-width: 140px; max-width: 140px; }
+  .movie-poster { height: 190px; }
+}
+
+@media (min-width: 768px) {
+  .banner-image { height: 550px; }
+  .banner-info { padding: 48px 36px; }
+  .banner-title { font-size: 3rem; }
+  .movies-row { gap: 24px; }
+  .movie-card { min-width: 200px; max-width: 200px; }
+  .movie-poster { height: 280px; }
+}
